@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es-ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>palindromo</title>
+</head>
+
+<body>
+    <section>
+        <h1>¿es palindromo?</h1>
+        <form>
+            <label for="name">ingresar palabra: </label>
+            <input type="text" name="nombre" id="name">
+            <input type="button" onclick="esPalindromo()" value="procesar">
+            <p>procesando...</p>
+        </form>
+    </section>
+</body>
+<script>
+    function esPalindromo() {
+        let texto = document.getElementsByName("nombre")[0].value;
+        
+        console.log(texto);
+
+        let acumulador = 0;
+        let textoUnificado = texto.replace(/\s+/g, "");
+        let textoMinuscula = textoUnificado.toLowerCase();
+        let textoaVector = textoMinuscula.split(""); //array de caracteres
+        let vectorInvertido = textoaVector.reverse(); // array invertido
+        for (let i = 0; i < textoaVector.length; i++) {
+            if (textoMinuscula[i] === vectorInvertido[i]) {
+                acumulador = acumulador + 1;
+            } else {
+                document.getElementsByTagName("p")[0].textContent = 'no es palindromo :( ';
+                // return false;
+            }
+        }
+        if (acumulador === vectorInvertido.length) {
+            document.getElementsByTagName("p")[0].textContent = 'es palindromo :) ';
+            // return true;
+        }
+
+    }
+</script>
+
+</html>
