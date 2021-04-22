@@ -1,2 +1,2 @@
 # esPalindromo
-Ejercicio, para saber si un texto ingresado por un input es o no un palíndromo.
+Ejercicio para saber si un texto ingresado por un tag input es o no palíndromo... xd
